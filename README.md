@@ -2,7 +2,7 @@
 
 ## Getting started
 
-`$ npm install react-native-image-colors --save`
+`$ yarn add react-native-image-colors`
 
 ### Automatic installation
 
@@ -14,8 +14,8 @@
 import ImageColors from 'react-native-image-colors';
 
 const colors = await ImageColors.getColorFromImage({
-	path: '...',
-	sections: 2
+  path: '...',
+  sections: 2
 })
 ```
 
