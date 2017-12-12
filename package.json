@@ -1,0 +1,16 @@
+{
+  "name": "@envoy/react-native-image-colors",
+  "version": "1.0.0",
+  "description": "pull average color values out of an image",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["react-native"],
+  "license": "MIT",
+  "author": {
+    "name": "Asa Miller",
+    "email": "asa@tinycreative.com",
+    "url": "https://www.asamiller.com"
+  }
+}
