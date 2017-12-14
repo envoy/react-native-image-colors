@@ -1,10 +1,12 @@
 {
   "name": "@envoy/react-native-image-colors",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "pull average color values out of an image",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --pretty",
+    "lint": "tslint -p . 'src/**/*.ts{,x}'"
   },
   "keywords": ["react-native"],
   "license": "MIT",
@@ -12,5 +14,15 @@
     "name": "Asa Miller",
     "email": "asa@tinycreative.com",
     "url": "https://www.asamiller.com"
+  },
+  "devDependencies": {
+    "prettier": "^1.9.2",
+    "@types/node": "^8.0.26",
+    "@types/react": "^16.0.5",
+    "@types/react-native": "^0.51.2",
+    "tslint": "^5.7.0",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.4.2"
   }
 }

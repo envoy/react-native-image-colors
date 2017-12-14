@@ -2,24 +2,21 @@
 
 ## Getting started
 
-`$ yarn add react-native-image-colors`
+`$ yarn add @envoy/react-native-image-colors`
 
 ### Automatic installation
 
-`$ react-native link react-native-image-colors`
+`$ react-native link @envoy/react-native-image-colors`
 
 ## Usage
 
 ```javascript
-import ImageColors from 'react-native-image-colors';
+import ImageColors from '@envoy/react-native-image-colors';
 
-const colors = await ImageColors.getColorFromImage({
-  path: '...',
-  sections: 2
-})
+const colors = await ImageColors.getColorFromImage('file-path', { sections: 2 })
 ```
 
-`path`: the full file path to an image on disk.
+`file-path`: the full file path to an image on disk.
 
 `sections`: the number of sections to divide the width and height into.
 
@@ -33,4 +30,12 @@ correspond with the sections count. So for example if you had `sections: 2`:
 | 0, 1 |
 | 2, 3 |
 --------
+```
+
+## Seperate X & Y Sections
+
+If you want to divide the image in different x & y sections, you can pass those in.
+
+```javascript
+const colors = await ImageColors.getColorFromImage('file-path', { sectionsX: 1, sectionsY: 5 })
 ```

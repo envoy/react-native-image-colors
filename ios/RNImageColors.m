@@ -18,7 +18,8 @@ RCT_EXPORT_METHOD(getColorFromImage:(NSDictionary *)options
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
     NSString *imagePath = options[@"path"];
-    CGFloat sections = [RCTConvert CGFloat:options[@"sections"]];
+    CGFloat sectionsX = [RCTConvert CGFloat:options[@"sectionsX"]];
+    CGFloat sectionsY = [RCTConvert CGFloat:options[@"sectionsY"]];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:imagePath])
     {
@@ -28,19 +29,19 @@ RCT_EXPORT_METHOD(getColorFromImage:(NSDictionary *)options
     }
     
     
-    RCTLogInfo(@"getColorFromImage file: %@ sections: %f", imagePath, sections);
+    RCTLogInfo(@"getColorFromImage file: %@ sectionsX: %f sectionsY: %f", imagePath, sectionsX, sectionsY);
     
     NSMutableArray *colors = [NSMutableArray array];
     
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     
-    CGFloat widthSize = floorf(image.size.width / sections);
-    CGFloat heightSize = floorf(image.size.height / sections);
+    CGFloat widthSize = floorf(image.size.width / sectionsX);
+    CGFloat heightSize = floorf(image.size.height / sectionsY);
     
     CGImageRef fullImage = [image CGImage];
     
-    for (int y = 0; y < sections; ++y) {
-        for (int x = 0; x < sections; ++x) {
+    for (int y = 0; y < sectionsY; ++y) {
+        for (int x = 0; x < sectionsX; ++x) {
             CGFloat xPos = x * widthSize;
             CGFloat yPos = y * heightSize;
             
